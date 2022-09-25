@@ -22,8 +22,9 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Viridis256
 from bokeh.models import ColorBar, LinearColorMapper, LogColorMapper, LogTicker
 from bokeh.models import BoxZoomTool,WheelZoomTool,ResetTool,HoverTool,PanTool,FreehandDrawTool
-from bokeh.io import output_notebook
-from pprint import pprint
+#import bokeh.io
+#from bokeh.io import output_notebook
+#from pprint import pprint
 #from IPython.display import Image
 #from ipywidgets import widgets, HBox
 from skimage.transform import rescale, resize, downscale_local_mean
