@@ -15,13 +15,17 @@ def setupDisplay():
   webUrl  = urllib.request.urlopen(custom_html_url)
 
   #get the result code and print it
-  print ("result code: " + str(webUrl.getcode()))
+  display("result code: " + str(webUrl.getcode()))
 
   # read the data from the URL and print it
   exotic_html = webUrl.read().decode('utf-8')
   display(HTML(exotic_html))
 
+def testImplementation(): 
+  display(HTML('<p>CODE IMPLEMENTED SUCCESSFULLY</p>'))
+
 def displayStep(message):
+  #display('in displayStep')
   js_code = '''\
                 var container = document.querySelector("#output-body ul.step_container");\
                 container.innerHTML += '<li class="step1">{m}</li>';
@@ -32,6 +36,7 @@ def makeContainer(container_class):
   display(HTML('<div class="' + container_class + '"></div>'))
 
 def appendToContainer(container_class, html_chunk):
+  #display(HTML('<p>appendingToContainer</p>'))
   js_code = '''\
                 var container = document.querySelector("#output-body .{c}");\
                 container.innerHTML += '{html_chunk}';
