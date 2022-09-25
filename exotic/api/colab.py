@@ -16,31 +16,23 @@ from astropy.time import Time
 from barycorrpy import utc_tdb
 import numpy as np
 from io import BytesIO
-#
 from astropy.io import fits
 from scipy.ndimage import label
 from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Viridis256
 from bokeh.models import ColorBar, LinearColorMapper, LogColorMapper, LogTicker
 from bokeh.models import BoxZoomTool,WheelZoomTool,ResetTool,HoverTool,PanTool,FreehandDrawTool
-#
-import bokeh.io
-#
-from bokeh.io import output_notebook
+#import bokeh.io
+#from bokeh.io import output_notebook
 from pprint import pprint
-#
-from IPython.display import Image
-#
-from ipywidgets import widgets, HBox
+#from IPython.display import Image
+#from ipywidgets import widgets, HBox
 from skimage.transform import rescale, resize, downscale_local_mean
-#
-import copy
+#import copy
 import os
 import re
-#
-import json
-#
-import subprocess
+#import json
+#import subprocess
 
 def display_image(filename):
     #print(f"{filename}")
