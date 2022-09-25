@@ -19,7 +19,7 @@ def setupDisplay():
 
   # read the data from the URL and print it
   exotic_html = webUrl.read()
-  display(HTML(exotic_html))
+  display(HTML('exotic_html'))
 
 def displayStep(message):
   js_code = '''\
