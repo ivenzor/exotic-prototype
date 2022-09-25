@@ -18,7 +18,7 @@ def setupDisplay():
   print ("result code: " + str(webUrl.getcode()))
 
   # read the data from the URL and print it
-  exotic_html = webUrl.read()
+  exotic_html = webUrl.read().decode('utf-8')
   display(HTML(exotic_html))
 
 def displayStep(message):
