@@ -12,6 +12,10 @@
 # or pre-existing inits file, plus any other inits files in the directory.
 
 #########################################################
+import os
+from astropy.io import fits
+from astropy.time import Time
+
 
 def display_image(filename):
     #print(f"{filename}")
