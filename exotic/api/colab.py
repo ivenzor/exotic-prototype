@@ -206,11 +206,11 @@ def find (hdr, ks, obs):
   if (val != ""):
     return(val)
 
-  print(f"\nI cannot find a field with any of these names in your image header: \n{ks}.")
-  print("Please enter the value (not the name of the header field, the actual value) that should")
-  print("be used for the value associated with this field.\n")
+  display(HTML(f'<p class="error">I cannot find a field with any of these names in your image header: {ks}.</p>'))
+  display(HTML(f'<p class="error">Please enter the value (not the name of the header field, the actual value) that should be used for the value associated with this field.'))
+
   if ks[0] == "HEIGHT":
-    print("The units of elevation are meters.")
+    display(HTML(f'<p class="error">The units of elevation are meters.</p>'))
   
   value = input("")
 
