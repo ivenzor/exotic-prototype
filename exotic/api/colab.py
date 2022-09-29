@@ -31,7 +31,7 @@ from skimage.transform import rescale, resize, downscale_local_mean
 #import copy
 import os
 import re
-#import json
+import json
 #import subprocess
 
 def display_image(filename):
@@ -206,11 +206,11 @@ def find (hdr, ks, obs):
   if (val != ""):
     return(val)
 
-  display(HTML(f'<p class="error">I cannot find a field with any of these names in your image header: {ks}.</p>'))
-  display(HTML(f'<p class="error">Please enter the value (not the name of the header field, the actual value) that should be used for the value associated with this field.'))
-
+  print(f"\nI cannot find a field with any of these names in your image header: \n{ks}.")
+  print("Please enter the value (not the name of the header field, the actual value) that should")
+  print("be used for the value associated with this field.\n")
   if ks[0] == "HEIGHT":
-    display(HTML(f'<p class="error">The units of elevation are meters.</p>'))
+    print("The units of elevation are meters.")
   
   value = input("")
 
@@ -339,9 +339,9 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
        obs_notes, targ_coords, comp_coords, min, max))
 
 
-  # print("\nWithin your folder of images, there is now a new folder called EXOTIC_output.")
-  # print("This folder contains an initialization file for EXOTIC called inits.json.")
-  # print("The same folder will contain the output files and images when EXOTIC finishes running.")
+  print("\nWithin your folder of images, there is now a new folder called EXOTIC_output.")
+  print("This folder contains an initialization file for EXOTIC called inits.json.")
+  print("The same folder will contain the output files and images when EXOTIC finishes running.")
 
   if not mobs_data:  
     print(f"\nThe inits.json file currently says that your observatory latitude was {latitude} deg,")
@@ -352,12 +352,12 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
 
   #print("\nNOTE: At this point in EXOTIC, you would have the opportunity change parameters in the inits file.")
 
-  #print("\nIf you want to change anything in the inits file, please do that now.")
-  #print("When you are done, press enter to continue.")
-  #okay = input()
+  print("\nIf you want to change anything in the inits file, please do that now.")
+  print("When you are done, save your changes, and press enter to continue.")
+  okay = input()
 
   time.sleep(1)
-  #print("Your coordinates have been saved in the initialization file here: " + inits_file_path)
+  print("Your coordinates have been saved in the initialization file here: " + inits_file_path)
   
   return(inits_file_path)
 
