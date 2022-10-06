@@ -353,6 +353,7 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
   #print("\nNOTE: At this point in EXOTIC, you would have the opportunity change parameters in the inits file.")
 
   print("\nIf you want to change anything in the inits file, please do that now.")
+  print(f"\nYou can click on the 'folder' icon in the left nav, navigate to {inits_file_path}, and double-click the filename to edit. Cmd/Ctrl-S to save.")
   print("When you are done, save your changes, and press enter to continue.")
   okay = input()
 
