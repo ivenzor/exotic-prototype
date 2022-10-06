@@ -33,6 +33,8 @@ import os
 import re
 import json
 #import subprocess
+import time
+
 
 def display_image(filename):
     #print(f"{filename}")
@@ -354,14 +356,9 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
 
   print("\nIf you want to change anything in the inits file, please do that now.")
   print(f"\nYou can click on the 'folder' icon in the left nav, navigate to {inits_file_path}, and double-click the filename to edit. Cmd/Ctrl-S to save.")
-  print("When you are done, save your changes, and press enter to continue.")
-  okay = input()
+  print("When you are done, save your changes, and proceed to the next step.")
 
-  time.sleep(1)
-  print("Your coordinates have been saved in the initialization file here: " + inits_file_path)
-  
   return(inits_file_path)
-
   
 ##############################################################
 
