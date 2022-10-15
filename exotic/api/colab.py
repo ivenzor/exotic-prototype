@@ -340,10 +340,9 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
        aavso_obs_code, sec_obs_code, obs_date, latitude, longitude, height, filter, 
        obs_notes, targ_coords, comp_coords, min, max))
 
-
-  print("\nWithin your folder of images, there is now a new folder called EXOTIC_output.")
-  print("This folder contains an initialization file for EXOTIC called inits.json.")
-  print("The same folder will contain the output files and images when EXOTIC finishes running.")
+  display(HTML('<p class="output"><b>Initialization File Created.</b></p>'))
+  print(f'Created: {inits_file_path}')
+  print('This folder will also contain the output files when EXOTIC finishes running.')
 
   if not mobs_data:  
     print(f"\nThe inits.json file currently says that your observatory latitude was {latitude} deg,")
@@ -352,11 +351,11 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
     print("*** (Please make sure that Western longitudes have a negative sign! ***")
     print("*** TheSkyX sometimes stamps Western longitudes as positive; this needs to be switched! ***\n")
 
-  #print("\nNOTE: At this point in EXOTIC, you would have the opportunity change parameters in the inits file.")
-
-  print("\nIf you want to change anything in the inits file, please do that now.")
-  print(f"\nYou can click on the 'folder' icon in the left nav, navigate to {inits_file_path}, and double-click the filename to edit. Cmd/Ctrl-S to save.")
-  print("When you are done, save your changes, and proceed to the next step.")
+  print(f'\nIf you want to change anything in the inits file, please do that now.')
+  print('\nYou can edit the file by clicking the folder icon in the left nav,')
+  print('navigating to the inits file at {inits_file_path}, and double-clicking the file.')
+  print('\nWhen you are done, save your changes, and proceed to the next step.')
+  
 
   return(inits_file_path)
   
