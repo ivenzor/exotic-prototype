@@ -12,6 +12,7 @@
 # or pre-existing inits file, plus any other inits files in the directory.
 
 #########################################################
+from IPython.display import display, HTML
 from astropy.time import Time
 from barycorrpy import utc_tdb
 import numpy as np
