@@ -12,7 +12,6 @@
 # or pre-existing inits file, plus any other inits files in the directory.
 
 #########################################################
-from IPython.display import display, HTML
 from astropy.time import Time
 from barycorrpy import utc_tdb
 import numpy as np
@@ -341,8 +340,7 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
        aavso_obs_code, sec_obs_code, obs_date, latitude, longitude, height, filter, 
        obs_notes, targ_coords, comp_coords, min, max))
 
-  display(HTML('<p class="output"><b>Initialization File Created.</b></p>'))
-  print(f'Created: {inits_file_path}')
+  print(f'Initialization file created: {inits_file_path}')
   print('This folder will also contain the output files when EXOTIC finishes running.')
 
   if not mobs_data:  
