@@ -354,7 +354,7 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
 
   display(HTML('<p class="output"><br /><b>If you want to change anything in the inits file, please do that now.'))
   print('You can edit the file by clicking the folder icon in the left nav,')
-  print('navigating to the inits file at {inits_file_path}, and double-clicking the file.')
+  print(f'navigating to the inits file at {inits_file_path}, and double-clicking the file.')
   print('\nWhen you are done, save your changes, and proceed to the next step.')
   
 
