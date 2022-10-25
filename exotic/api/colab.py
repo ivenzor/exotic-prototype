@@ -257,7 +257,7 @@ def look_for_calibration(image_dir):
 # Writes a new inits file into the directory with the output plots.  This prompts
 # for needed information that it cannot find in the fits header of the first image.
 
-def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_coords, comp_coords, obs, aavso_obs_code, sample_data):
+def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_coords, comp_coords, obs, aavso_obs_code, sec_obs_code, sample_data):
   inits_file_path = output_dir+"inits.json"
   hdul = fits.open(first_image)
   hdr = dict(hdul[0].header)
@@ -284,7 +284,6 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
   latitude = find(hdr,['LATITUDE', 'LAT', 'SITELAT'],obs)
   height = int(find(hdr, ['HEIGHT', 'ELEVATION', 'ELE', 'EL', 'OBSGEO-H', 'ALT-OBS', 'SITEELEV'], obs))
   obs_notes = "N/A"
-  sec_obs_code = "N/A"
 
   mobs_data = False
   # For MObs, the date is local rather than UTC, so convert.
@@ -298,6 +297,8 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
   
   if aavso_obs_code == "":
       aavso_obs_code = "N/A"
+  if sec_obs_code == "":
+      sec_obs_code = "N/A"
 
   obs_date = date_obs[0:10]
   (darks_dir, flats_dir, biases_dir) = look_for_calibration(image_dir)
