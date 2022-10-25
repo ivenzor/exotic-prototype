@@ -353,7 +353,7 @@ def make_inits_file(planetary_params, image_dir, output_dir, first_image, targ_c
     print("*** (Please make sure that Western longitudes have a negative sign! ***")
     print("*** TheSkyX sometimes stamps Western longitudes as positive; this needs to be switched! ***\n")
 
-  display(HTML('<p class="output"><br /><b>If you want to change anything in the inits file, please do that now.'))
+  display(HTML('<p class="output"><br /><b>If you want to change anything in the inits file, such as planetary parameters or user info, please do that now.</b></p>'))
   print('You can edit the file by clicking the folder icon in the left nav,')
   print(f'navigating to the inits file at {inits_file_path}, and double-clicking the file.')
   print('\nWhen you are done, save your changes, and proceed to the next step.')
