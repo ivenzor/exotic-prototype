@@ -41,16 +41,15 @@ def display_image(filename):
     #print(f"{filename}")
     hdu = fits.open(filename)
 
-# replace 0's with extension      # Stuff to put in if the hdul ever becomes a problem.    
-#    extension = 0
-#    image_header = hdul[extension].header
-#    while image_header["NAXIS"] == 0:
-#      extension += 1
-#      image_header = hdul[extension].header
+    extension = 0
+    image_header = hdul[extension].header
+    while image_header["NAXIS"] == 0:
+      extension += 1
+      image_header = hdul[extension].header
 
-    dheader = dict(hdu[0].header)
+    dheader = dict(hdu[extension].header)
   
-    data = hdu[0].data
+    data = hdu[extension].data
     megapixel_factor = (data.shape[0])*(data.shape[1])/1000000.0
     if megapixel_factor > 5:
       print(f"Downsampling image because it has {megapixel_factor} megapixels.")
@@ -84,7 +83,7 @@ def display_image(filename):
     # must give a vector of image data for image parameter
     fig.image(
         image=[data],
-          x=0, y=0, dw=hdu[0].data.shape[1], dh=hdu[0].data.shape[0],
+          x=0, y=0, dw=hdu[extension].data.shape[1], dh=hdu[extension].data.shape[0],
           level="image", color_mapper=color_mapper
     )
     fig.grid.grid_line_width = 0.5
