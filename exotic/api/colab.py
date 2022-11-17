@@ -42,10 +42,10 @@ def display_image(filename):
     hdu = fits.open(filename)
 
     extension = 0
-    image_header = hdul[extension].header
+    image_header = hdu[extension].header
     while image_header["NAXIS"] == 0:
       extension += 1
-      image_header = hdul[extension].header
+      image_header = hdu[extension].header
 
     dheader = dict(hdu[extension].header)
   
